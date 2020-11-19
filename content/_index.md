@@ -50,14 +50,14 @@ Le ministre a promis une revalorisation « exceptionnelle » du salaire des pe
 <div id="aAfficher">
    <div id="resultat">
       <h2>Résultat</h2>
-      <p>Le gouvernement envisage 4 scénarios de répartition de 400 millions d’euros. Il s’agit d’une prime dégressive à mesure que l’on progresse dans la carrière.</p>
+      <p>Le gouvernement envisage le versement d’une prime dégressive à mesure que l’on progresse dans la carrière.</p>
    </div>
    <div id="debutCarriere">
       <p>Le versement de la “prime d’attractivité” du ministère n'est pas prévu par le ministère au premier échelon. SUD éducation dénonce cette décision, d’autant plus que les salaires des enseignant-e-s en début de carrière sont scandaleusement bas. SUD éducation revendique une augmentation des salaires d’autant plus forte que les salaires sont faibles, pour tous les personnels.</p>
 	  <p>Pour mémoire, depuis 1995, le gel du point d’indice a conduit les <b>salaires dans la fonction publique à baisser de 19,82% en raison de l’inflation.</b></p>
    </div>
    <div id="echelonEleve">
-      <p>Au-delà du huitième échelon de la classe normale, aucune revalorisation n’est prévue pour les personnels, pourtant enseignants depuis de nombreuses années.</p>
+      <p>Au-delà du septième échelon de la classe normale, aucune revalorisation n’est prévue pour les personnels, pourtant enseignants depuis de nombreuses années.</p>
 	  <p>Pour mémoire, depuis 1995, le gel du point d’indice a conduit les <b>salaires dans la fonction publique à baisser de 19,82% en raison de l’inflation.</b>
    </div>
    <div id="autre">
@@ -103,18 +103,8 @@ Le ministre a promis une revalorisation « exceptionnelle » du salaire des pe
 	  <p>Pour mémoire, depuis 1995, le gel du point d’indice a conduit les <b>salaires dans la fonction publique à baisser de 19,82% en raison de l’inflation.</b>
    </div>
    <div id="scenarios">
-      <h3>Scénario 1</h3>
-      <p id="sc1">
-      <p id="sc1inflation"></p>
-      <h3>Scénario 2</h3>
-      <p id="sc2">
-      <p id="sc2inflation"></p>
-      <h3>Scénario 3</h3>
       <p id="sc3">
       <p id="sc3inflation"></p>
-      <h3>Scénario 4</h3>
-      <p id="sc4">
-      <p id="sc4inflation"></p>
    </div>
 </div>
 

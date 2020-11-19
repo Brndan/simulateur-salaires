@@ -109,19 +109,19 @@ function calcul() {
                     pe: 1400,
                     certifie: 1300,
                     agrege: 1200,
-                    indifferent: 1300
+                    indifferent: 1400
                 },
                 "e3": {
                     pe: 1300,
                     certifie: 1200,
                     agrege: 1100,
-                    indifferent: 1200
+                    indifferent: 1250
                 },
                 "e4": {
                     pe: 900,
                     certifie: 800,
                     agrege: 700,
-                    indifferent: 800
+                    indifferent: 900
                 },
                 "e5": {
                     pe: 800,
@@ -133,13 +133,13 @@ function calcul() {
                     pe: 500,
                     certifie: 400,
                     agrege: 300,
-                    indifferent: 400
+                    indifferent: 500
                 },
                 "e7": {
                     pe: 500,
                     certifie: 400,
                     agrege: 300,
-                    indifferent: 400
+                    indifferent: 500
                 }
             }
         },
@@ -250,7 +250,7 @@ function calcul() {
     }
 
     // Cas des enseignant-es au 9e échelon CN et plus
-    if (echelon == 9) {
+    if (echelon >= 8) {
         document.getElementById('echelonEleve').style.display = 'block'
         return
     }
@@ -258,50 +258,13 @@ function calcul() {
     // Cas des personnels enseignants des échelons 2 à 8
     document.getElementById('scenarios').style.display = 'block';
 
-    // scénario 1
-    if (echelon <= Object.keys(scenario.scenario1.echelon).length + 1) {
-
-        let primeAnnuelle = scenario.scenario1.echelon["e" + echelon.toString()][corps]
-        let primeMensuelle = Math.floor(((primeAnnuelle / 12) * 100)) / 100;
-        let primeMensuelleNette = Math.floor((primeMensuelle * primeBrutNet * 100)) / 100
-
-        document.getElementById("sc1").innerHTML = `Ce scénario prévoit une prime brute annuelle de ${primeAnnuelle} euros bruts pour votre échelon dans votre corps.<br />Cela revient à une prime mensuelle de ${primeMensuelle} euros bruts, soit environ ${primeMensuelleNette} euros nets par mois.`
-        let augmentationPourCent = Math.floor((primeMensuelle / salaireBrutEchelon) * 100);
-        let salaireInflationCompensee = Math.floor(salaireBrutEchelon * inflation * 100) / 100;
-        document.getElementById('sc1inflation').innerHTML = `Cette prime représente une augmentation de votre salaire de ${augmentationPourCent}%.
-            Depuis 1995, le gel du point d’indice a conduit les salaires à baisser de 19,82% en raison de l’inflation.
-            Si le point d'indice était revalorisé, <b>au lieu de ${salaireBrutEchelon} euros bruts mensuels, vous devriez gagner au même échelon au moins ${salaireInflationCompensee} euros.</b>`
-
-    } else {
-        document.getElementById("sc1").innerHTML = "Ce scénario ne prévoit pas de prime pour votre échelon."
-    }
-
-
-    // scénario 2
-    if (echelon <= Object.keys(scenario.scenario2.echelon).length + 1) {
-
-
-        let primeAnnuelle = scenario.scenario2.echelon["e" + echelon.toString()][corps]
-        let primeMensuelle = Math.floor(((primeAnnuelle / 12) * 100)) / 100;
-        let primeMensuelleNette = Math.floor((primeMensuelle * primeBrutNet * 100)) / 100
-
-        document.getElementById("sc2").innerHTML = `Ce scénario prévoit une prime brute annuelle de ${primeAnnuelle} euros bruts pour votre échelon dans votre corps.<br />Cela revient à une prime mensuelle de ${primeMensuelle} euros bruts, soit environ ${primeMensuelleNette} euros nets par mois.`
-        let augmentationPourCent = Math.floor((primeMensuelle / salaireBrutEchelon) * 100);
-        let salaireInflationCompensee = Math.floor(salaireBrutEchelon * inflation * 100) / 100;
-        document.getElementById('sc2inflation').innerHTML = `Cette prime représente une augmentation de votre salaire de ${augmentationPourCent}%.
-            Depuis 1995, le gel du point d’indice a conduit les salaires à baisser de 19,82% en raison de l’inflation.
-            Si le point d'indice était revalorisé, <b>au lieu de ${salaireBrutEchelon} euros bruts mensuels, vous devriez gagner au même échelon au moins ${salaireInflationCompensee} euros.</b>`
-
-    } else {
-        document.getElementById("sc2").innerHTML = "Ce scénario ne prévoit pas de prime pour votre échelon."
-    }
-
+   
     // scénario 3
 
     if (echelon <= Object.keys(scenario.scenario3.echelon).length + 1) {
 
 
-        let primeAnnuelle = scenario.scenario3.echelon["e" + echelon.toString()][corps]
+        let primeAnnuelle = scenario.scenario3.echelon["e" + echelon.toString()]["indifferent"]
         let primeMensuelle = Math.floor(((primeAnnuelle / 12) * 100)) / 100;
         let primeMensuelleNette = Math.floor((primeMensuelle * primeBrutNet * 100)) / 100
 
@@ -310,31 +273,11 @@ function calcul() {
         let salaireInflationCompensee = Math.floor(salaireBrutEchelon * inflation * 100) / 100;
         document.getElementById('sc3inflation').innerHTML = `Cette prime représente une augmentation de votre salaire de ${augmentationPourCent}%.
             Depuis 1995, le gel du point d’indice a conduit les salaires à baisser de 19,82% en raison de l’inflation.
-            Si le point d'indice était revalorisé, <b>au lieu de ${salaireBrutEchelon} euros bruts mensuels, vous devriez gagner au même échelon au moins ${salaireInflationCompensee} euros.</b>`
+            Si le point d'indice était revalorisé, <b>au lieu de ${salaireBrutEchelon} euros bruts mensuels primes incluses, vous devriez gagner au même échelon au moins ${salaireInflationCompensee} euros.</b>`
 
     } else {
-        document.getElementById("sc3").innerHTML = "Ce scénario ne prévoit pas de prime pour votre échelon."
+        document.getElementById("sc3").innerHTML = "Le scénario de revalorisation ne prévoit pas de prime pour votre échelon."
     }
-
-    // scénario 4
-    if (echelon <= Object.keys(scenario.scenario4.echelon).length + 1) {
-
-        let primeAnnuelle = scenario.scenario4.echelon["e" + echelon.toString()][corps]
-        let primeMensuelle = Math.floor(((primeAnnuelle / 12) * 100)) / 100;
-        let primeMensuelleNette = Math.floor((primeMensuelle * primeBrutNet * 100)) / 100
-
-        document.getElementById("sc4").innerHTML = `Ce scénario prévoit une prime brute annuelle de ${primeAnnuelle} euros bruts pour votre échelon dans votre corps.<br />Cela revient à une prime mensuelle de ${primeMensuelle} euros bruts, soit environ ${primeMensuelleNette} euros nets par mois.`
-        let augmentationPourCent = Math.floor((primeMensuelle / salaireBrutEchelon) * 100);
-        let salaireInflationCompensee = Math.floor(salaireBrutEchelon * inflation * 100) / 100;
-        document.getElementById('sc4inflation').innerHTML = `Cette prime représente une augmentation de votre salaire de ${augmentationPourCent}%.
-            Depuis 1995, le gel du point d’indice a conduit les salaires à baisser de 19,82% en raison de l’inflation.
-            Si le point d'indice était revalorisé, <b>au lieu de ${salaireBrutEchelon} euros bruts mensuels, vous devriez gagner au même échelon au moins ${salaireInflationCompensee} euros.</b>`
-
-    } else {
-        document.getElementById("sc4").innerHTML = "Ce scénario ne prévoit pas de prime pour votre échelon."
-    }
-
-
 
 }
 
