@@ -264,7 +264,7 @@ function calcul() {
     if (echelon <= Object.keys(scenario.scenario3.echelon).length + 1) {
 
 
-        let primeAnnuelle = scenario.scenario3.echelon["e" + echelon.toString()]["indifferent"]
+        let primeAnnuelle = scenario.scenario3.echelon["e" + echelon.toString()].indifferent
         let primeMensuelle = Math.floor(((primeAnnuelle / 12) * 100)) / 100;
         let primeMensuelleNette = Math.floor((primeMensuelle * primeBrutNet * 100)) / 100
 
