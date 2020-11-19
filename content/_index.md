@@ -64,37 +64,30 @@ Le ministre a promis une revalorisation « exceptionnelle » du salaire des pe
       <p>Vous n’êtes pas personnel enseignant&nbsp;? La revalorisation n’est pas prévue pour vous. Pour SUD éducation, ce sont <b>bien tous les personnels qui doivent bénéficier d’une augmentation de salaire maintenant</b>.</p>
 	  <p>Pour mémoire, depuis 1995, le gel du point d’indice a conduit les <b>salaires dans la fonction publique à baisser de 19,82% en raison de l’inflation.</b>
    </div>
-   <div id="contractuel">
-      <p>Pour les enseignant-e-s non-titulaires, le ministère prévoit le versement forfaitaire d’une prime différente selon le scénario retenu.</p>
+   <div id="contrat">
+      <p>Pour les enseignant-e-s non-titulaires, le ministère prévoit le versement forfaitaire d’une prime dégressive en fonction de l’ancienneté dans la carrière.</p>
       <figure>
          <table>
             <thead>
                <tr>
-                  <th>Scénario</th>
+                  <th>Carrière</th>
                   <th>Montant brut annuel</th>
                   <th>Montant brut mensuel</th>
+                  <th>Montant net mensuel</th>
                </tr>
             </thead>
             <tbody>
                <tr>
-                  <td>Scénario 1</td>
-                  <td>800€ bruts</td>
-                  <td>66,67€ bruts</td>
-               </tr>
-               <tr>
-                  <td>Scénario 2</td>
-                  <td>800€ bruts</td>
-                  <td>66,67€ bruts</td>
-               </tr>
-               <tr>
-                  <td>Scénario 3</td>
+                  <td>Palier 1</td>
                   <td>700€ bruts</td>
                   <td>58,33€ bruts</td>
+                  <td>49,93€ nets</td>
                </tr>
                <tr>
-                  <td>Scénario 4</td>
-                  <td>600€ bruts</td>
-                  <td>50€ bruts</td>
+                  <td>Palier 7</td>
+                  <td>400€ bruts</td>
+                  <td>33,33€ bruts</td>
+                  <td>28,5€ nets</td>
                </tr>
             </tbody>
          </table>
